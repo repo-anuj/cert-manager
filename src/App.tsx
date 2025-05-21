@@ -1,10 +1,13 @@
 import AppRoutes from "./routes/AppRoutes";
 import "./styles/globals.css";
 import { AuthProvider } from "./context/AuthContext";
+import { ToastProvider } from "./context/ToastContext";
 
 const App = () => (
   <AuthProvider>
-    <AppRoutes />
+    <ToastProvider>
+      <AppRoutes />
+    </ToastProvider>
   </AuthProvider>
 );
 
