@@ -7,6 +7,10 @@ import AddCertificate from "../pages/AddCertificate";
 import Awards from "../pages/Awards";
 import AwardDetail from "../pages/AwardDetail";
 import AddAward from "../pages/AddAward";
+import Shared from "../pages/Shared";
+import Profile from "../pages/Profile";
+import PublicCertificateView from "../pages/PublicCertificateView";
+import PublicProfile from "../pages/PublicProfile";
 
 const DashboardRoutes = () => (
   <Routes>
@@ -19,11 +23,16 @@ const DashboardRoutes = () => (
       <Route path="awards" element={<Awards />} />
       <Route path="awards/:id" element={<AwardDetail />} />
       <Route path="add-award" element={<AddAward />} />
-      {/* Add more dashboard routes as needed */}
-      <Route path="shared" element={<div className="p-6 text-white">Shared Certificates Page (Coming Soon)</div>} />
+      {/* Shared and Analytics */}
+      <Route path="shared" element={<Shared />} />
+      {/* Profile */}
+      <Route path="profile" element={<Profile />} />
+      {/* Other routes */}
       <Route path="settings" element={<div className="p-6 text-white">Settings Page (Coming Soon)</div>} />
-      <Route path="profile" element={<div className="p-6 text-white">Profile Page (Coming Soon)</div>} />
     </Route>
+    {/* Public routes outside dashboard layout */}
+    <Route path="/share/:id" element={<PublicCertificateView />} />
+    <Route path="/profile/:username" element={<PublicProfile />} />
   </Routes>
 );
 

@@ -62,33 +62,33 @@
 
 ## Sharing & Analytics
 
-- [ ] Enhance Shared section with analytics:
-  - [ ] View count per certificate
-  - [ ] Geographic data of viewers
-  - [ ] Time-based analytics (views over time)
-  - [ ] Referral sources
-- [ ] Create sharing options:
-  - [ ] Generate shareable links
-  - [ ] Social media sharing
-  - [ ] Email sharing
-  - [ ] Embed code generation
-- [ ] Implement privacy settings for shared certificates
-- [ ] Add QR code generation for certificates
-- [ ] Create public certificate view page
+- [x] Enhance Shared section with analytics:
+  - [x] View count per certificate
+  - [x] Geographic data of viewers
+  - [x] Time-based analytics (views over time)
+  - [x] Referral sources
+- [x] Create sharing options:
+  - [x] Generate shareable links
+  - [x] Social media sharing
+  - [x] Email sharing
+  - [x] Embed code generation
+- [x] Implement privacy settings for shared certificates
+- [x] Add QR code generation for certificates
+- [x] Create public certificate view page
 
 ## Profile Page
 
-- [ ] Design and implement Profile page:
-  - [ ] User information (name, email, etc.)
-  - [ ] Profile picture upload/change
-  - [ ] Bio/about section
-  - [ ] Professional information
-  - [ ] Social media links
-  - [ ] Education history
-- [ ] Add profile completion percentage
-- [ ] Create public profile view option
-- [ ] Implement profile editing functionality
-- [ ] Add resume/CV generation from certificates and profile
+- [x] Design and implement Profile page:
+  - [x] User information (name, email, etc.)
+  - [x] Profile picture upload/change
+  - [x] Bio/about section
+  - [x] Professional information
+  - [x] Social media links
+  - [x] Education history
+- [x] Add profile completion percentage
+- [x] Create public profile view option
+- [x] Implement profile editing functionality
+- [x] Add resume/CV generation from certificates and profile
 
 ## Settings Page
 
@@ -112,8 +112,8 @@
   - [x] Add visual indicators for certificate types
   - [x] Implement card-based layout instead of table
 - [x] Add quick actions on hover
-- [ ] Implement pagination or infinite scroll
-- [ ] Add "Featured Certificate" option
+- [x] Implement pagination or infinite scroll
+- [x] Add "Featured Certificate" option
 - [x] Create certificate grouping by issuer or category
 
 ## Authentication & Security
