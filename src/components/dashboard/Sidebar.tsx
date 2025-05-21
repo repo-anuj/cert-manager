@@ -4,7 +4,7 @@ import { Sidebar as AceternitySidebar, SidebarBody, SidebarLink } from "../ui/si
 import {
   IconHome,
   IconCertificate,
-  IconUpload,
+  IconAward,
   IconShare,
   IconSettings,
   IconLogout,
@@ -38,9 +38,9 @@ const Sidebar = () => {
       icon: <IconCertificate className="h-5 w-5 shrink-0 text-neutral-200" />
     },
     {
-      path: "/dashboard/upload",
-      label: "Upload New",
-      icon: <IconUpload className="h-5 w-5 shrink-0 text-neutral-200" />
+      path: "/dashboard/awards",
+      label: "Awards",
+      icon: <IconAward className="h-5 w-5 shrink-0 text-neutral-200" />
     },
     {
       path: "/dashboard/shared",

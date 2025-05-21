@@ -114,16 +114,22 @@ export const MobileSidebar = ({
     <>
       <div
         className={cn(
-          "fixed top-0 left-0 h-14 px-4 py-4 flex flex-row md:hidden items-center justify-between bg-neutral-900 dark:bg-neutral-900 w-full z-20 border-b border-neutral-800"
+          "fixed top-0 left-0 h-16 px-4 py-4 flex flex-row md:hidden items-center justify-between bg-neutral-900 dark:bg-neutral-900 w-full z-20 border-b border-neutral-800 shadow-lg"
         )}
         {...props}
       >
         <div className="flex justify-between z-20 w-full items-center">
-          <div className="text-white font-bold text-lg">CertManager</div>
-          <IconMenu2
-            className="text-neutral-200"
+          <div className="text-white font-bold text-lg flex items-center">
+            <div className="h-6 w-7 shrink-0 rounded-tl-lg rounded-tr-sm rounded-br-lg rounded-bl-sm bg-primary mr-2" />
+            CertManager
+          </div>
+          <button
+            className="p-2 rounded-full hover:bg-neutral-800 transition-colors"
             onClick={() => setOpen(!open)}
-          />
+            aria-label="Open menu"
+          >
+            <IconMenu2 className="text-neutral-200 h-6 w-6" />
+          </button>
         </div>
         <AnimatePresence>
           {open && (
@@ -136,23 +142,36 @@ export const MobileSidebar = ({
                 ease: "easeInOut",
               }}
               className={cn(
-                "fixed h-full w-full inset-0 bg-neutral-900 p-10 z-[100] flex flex-col justify-between",
+                "fixed h-full w-full inset-0 bg-neutral-900 pt-16 pb-8 px-6 z-[100] flex flex-col justify-between overflow-y-auto",
                 className
               )}
             >
               <div
-                className="absolute right-6 top-6 z-50 text-neutral-200 p-2"
+                className="absolute right-4 top-4 z-50 text-neutral-200 p-2 rounded-full hover:bg-neutral-800 transition-colors"
                 onClick={() => setOpen(!open)}
+                aria-label="Close menu"
               >
-                <IconX />
+                <IconX className="h-6 w-6" />
               </div>
+
+              {/* Mobile profile section at top */}
+              <div className="flex items-center space-x-3 mb-8 mt-4 pb-4 border-b border-neutral-800">
+                <div className="h-12 w-12 rounded-full bg-primary text-white flex items-center justify-center text-lg font-bold">
+                  U
+                </div>
+                <div>
+                  <p className="text-white font-medium">User</p>
+                  <p className="text-xs text-gray-400">user@example.com</p>
+                </div>
+              </div>
+
               {children}
             </motion.div>
           )}
         </AnimatePresence>
       </div>
       {/* Add padding to push content down on mobile */}
-      <div className="h-14 md:hidden"></div>
+      <div className="h-16 md:hidden"></div>
     </>
   );
 };
@@ -171,18 +190,22 @@ export const SidebarLink = ({
       href={link.href}
       className={cn(
         "flex items-center justify-start gap-3 group/sidebar py-3 px-3 rounded-lg hover:bg-neutral-800 transition-all duration-200",
+        "focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50",
+        "md:text-sm text-base", // Larger text on mobile
         className
       )}
       {...props}
     >
-      {link.icon}
+      <div className="flex-shrink-0">
+        {link.icon}
+      </div>
 
       <motion.span
         animate={{
           display: animate ? (open ? "inline-block" : "none") : "inline-block",
           opacity: animate ? (open ? 1 : 0) : 1,
         }}
-        className="text-neutral-200 text-sm group-hover/sidebar:translate-x-1 transition duration-150 whitespace-pre inline-block !p-0 !m-0"
+        className="text-neutral-200 group-hover/sidebar:translate-x-1 transition duration-150 whitespace-pre inline-block !p-0 !m-0"
       >
         {link.label}
       </motion.span>
